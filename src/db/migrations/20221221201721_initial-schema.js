@@ -8,7 +8,7 @@ export const up = async (knex) => {
     table.increments("id").primary()
     table.text("passportNumber").notNullable().unique()
     table.text("email").notNullable().unique()
-    table.text("phone").notNullable()
+    table.text("phoneNumber").notNullable()
     table.text("gender").notNullable()
     table.text("firstName").notNullable()
     table.text("lastName").notNullable()

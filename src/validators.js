@@ -51,14 +51,92 @@ export const validateEmailOrUsername = yup
   .trim()
   .label("Email or Username")
 
-export const validateContent = yup.string().min(1).label("Content")
+export const validateAddressLine1 = yup
+  .string()
+  .min(1)
+  .max(20)
+  .trim()
+  .matches(/[^\n\r\u00a0]/)
+  .label("addressLine1")
 
-export const validatePostTitle = yup.string().min(1).label("Title")
-
-export const validatePostContent = validateContent.label("Post content")
+export const validateAddressLine2 = yup
+  .string()
+  .min(1)
+  .max(20)
+  .trim()
+  .matches(/[^\n\r\u00a0]/)
+  .label("addressLine2")
+export const validateBirthCountry = yup
+  .string()
+  .min(1)
+  .max(20)
+  .trim()
+  .matches(/[^\n\r\u00a0]/)
+  .label("addressLine2")
+export const validateBirthDate = yup
+  .string()
+  .min(1)
+  .max(20)
+  .trim()
+  .matches(/[^\n\r\u00a0]/)
+  .label("addressLine2")
+export const validateCitizenCountry = yup
+  .string()
+  .min(1)
+  .max(20)
+  .trim()
+  .matches(/[^\n\r\u00a0]/)
+  .label("addressLine2")
+export const validateCity = yup
+  .string()
+  .min(1)
+  .max(20)
+  .trim()
+  .matches(/[^\n\r\u00a0]/)
+  .label("addressLine2")
+export const validateCountry = yup
+  .string()
+  .min(1)
+  .max(20)
+  .trim()
+  .matches(/[^\n\r\u00a0]/)
+  .label("addressLine2")
+export const validateGender = yup
+  .string()
+  .min(1)
+  .max(20)
+  .trim()
+  .matches(/[^\n\r\u00a0]/)
+  .label("addressLine2")
+export const validateIsDisabledPerson = yup
+  .string()
+  .min(1)
+  .max(20)
+  .trim()
+  .matches(/[^\n\r\u00a0]/)
+  .label("addressLine2")
+export const validatePassportNumber = yup
+  .string()
+  .min(1)
+  .max(20)
+  .trim()
+  .matches(/[^\n\r\u00a0]/)
+  .label("addressLine2")
+export const validateZipcode = yup
+  .string()
+  .min(1)
+  .max(20)
+  .trim()
+  .matches(/[^\n\r\u00a0]/)
+  .label("addressLine2")
+export const validatePhoneNumber = yup
+  .string()
+  .min(10)
+  .max(15)
+  .trim()
+  .matches("^(\\([0-9]{2}\\))?[0-9]{2}-[0-9]{2}[0-9]{2}-[0-9]{2}[0-9]{2}")
+  .label("phone number")
 
 export const validatePublishedAt = yup.date().label("Publishing date")
 
 export const validateSearch = yup.string().min(3).label("Search terms")
-
-export const validateCommentContent = validateContent.label("Comment content")
