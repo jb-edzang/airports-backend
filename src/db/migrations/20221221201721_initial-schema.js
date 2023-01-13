@@ -177,18 +177,18 @@ export const up = async (knex) => {
 
 export const down = async (knex) => {
   await knex.schema.dropTable("posts")
-  await knex.schema.dropTable("tickets") // commencer par la dernière table en montant vers la 1ère
-  await knex.schema.dropTable("terminals")
+  await knex.schema.dropTable("tickets")
   await knex.schema.dropTable("rel_crewMembers_flights")
+  await knex.schema.dropTable("arrivals")
+  await knex.schema.dropTable("departures")
   await knex.schema.dropTable("gates")
   await knex.schema.dropTable("flights")
-  await knex.schema.dropTable("departures")
   await knex.schema.dropTable("crewMembers")
-  await knex.schema.dropTable("constructors")
-  await knex.schema.dropTable("airplaneModels")
+  await knex.schema.dropTable("terminals")
   await knex.schema.dropTable("airplanes")
+  await knex.schema.dropTable("airplaneModels")
   await knex.schema.dropTable("airports")
   await knex.schema.dropTable("companies")
-  await knex.schema.dropTable("arrivals")
   await knex.schema.dropTable("passengers")
+  await knex.schema.dropTable("constructors")
 }

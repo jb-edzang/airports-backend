@@ -12,7 +12,7 @@ let companiesSql = `INSERT INTO companies (
 
     return `(
     '${faker.random.alphaNumeric(20).toUpperCase()}',
-    '${Math.floor(Math.random() * 100) % 30 ? "TRUE" : "FALSE"}',
+    '${Math.floor(Math.random() * 100) > 30 ? "TRUE" : "FALSE"}',
     '${isLowCost}',
     '${name}',
   )`

@@ -11,20 +11,24 @@ let airportsSql = `INSERT INTO airports (
   "country",
 ) VALUES ${[...new Array(1000)]
   .map(() => {
-    const country = faker.address.countryCode()
-    const name = faker.company.name().replace(/'/g, "''")
+    const name = faker.name.jobArea().replace(/'/g, "''")
+    const addressLine1 = faker.address.name().replace(/'/g, "''")
+    const addressLine2 = faker.address.streetAddress().replace(/'/g, "''")
+    const zipcode = faker.address.secondaryAddress().replace(/'/g, "''")
+    const city = faker.address.city().replace(/'/g, "''")
+    const country = faker.address.countryCode().replace(/'/g, "''")
 
     return `(
-    '${userName}',
     ${Math.floor(Math.random() * 100) % 30 ? "TRUE" : "FALSE"},
-    '${faker.address.streetAddress().replace(/'/g, "''")}',
-    '${faker.address.secondaryAddress().replace(/'/g, "''")}',
-    '${faker.address.zipCode()}',
-    '${faker.address.city().replace(/'/g, "''")}',
-    '${country}'
     '${
       Math.floor(Math.random() * 100) % 40 ? country : faker.address.country()
     }',
+    '${zipcode}',
+    '${name}',
+    '${country}'
+    '${city}',
+    '${addressLine1}',
+    '${addressLine2}'
   )`
   })
   .join(",")}`

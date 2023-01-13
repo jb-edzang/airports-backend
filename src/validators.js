@@ -19,6 +19,16 @@ export const validateUsername = yup
   )
   .trim()
   .label("Username")
+export const validateName = yup
+  .string()
+  .min(2)
+  .max(15)
+  .matches(
+    /^[a-z][a-z0-9._]*/,
+    "Name must contain only letters, numbers, '.' and '_'"
+  )
+  .trim()
+  .label("name")
 
 export const validateDisplayName = yup
   .string()
@@ -136,6 +146,67 @@ export const validatePhoneNumber = yup
   .trim()
   .matches("^(\\([0-9]{2}\\))?[0-9]{2}-[0-9]{2}[0-9]{2}-[0-9]{2}[0-9]{2}")
   .label("phone number")
+
+export const validateBusinessClassSeats = yup
+  .string()
+  .min(1)
+  .max(10)
+  .trim()
+  .matches(/[^\n\r\u00a0]/)
+export const validateFirstClassSeats = yup
+  .string()
+  .min(1)
+  .max(10)
+  .trim()
+  .matches(/[^\n\r\u00a0]/)
+export const validateSecondClassSeats = yup
+  .string()
+  .min(1)
+  .max(10)
+  .trim()
+  .matches(/[^\n\r\u00a0]/)
+export const validateCrewCapacity = yup
+  .string()
+  .min(1)
+  .max(10)
+  .trim()
+  .matches(/[^\n\r\u00a0]/)
+export const validateLoadCapacity = yup
+  .string()
+  .min(1)
+  .max(10)
+  .trim()
+  .matches(/[^\n\r\u00a0]/)
+export const validateFuelCapacity = yup
+  .string()
+  .min(1)
+  .max(10)
+  .trim()
+  .matches(/[^\n\r\u00a0]/)
+export const validateWingspan = yup
+  .string()
+  .min(1)
+  .max(10)
+  .trim()
+  .matches(/[^\n\r\u00a0]/)
+export const validateLenght = yup
+  .string()
+  .min(1)
+  .max(10)
+  .trim()
+  .matches(/[^\n\r\u00a0]/)
+export const validateHeight = yup
+  .string()
+  .min(1)
+  .max(10)
+  .trim()
+  .matches(/[^\n\r\u00a0]/)
+export const validateWeight = yup
+  .string()
+  .min(1)
+  .max(10)
+  .trim()
+  .matches(/[^\n\r\u00a0]/)
 
 export const validatePublishedAt = yup.date().label("Publishing date")
 

@@ -1,18 +1,18 @@
 import { Model } from "objection"
 // import hashPassword from "../../hashPassword.js"
-import AirplanesModel from "./Airplane.js"
+import Weather from "./Weather.js"
 
-class Constructor extends Model {
-  static tableName = "constructors"
+class Country extends Model {
+  static tableName = "countries"
 
   static get relationMappings() {
     return {
-      airplanesModels: {
+      weathers: {
         relation: Model.HasManyRelation,
-        modelClass: AirplanesModel,
+        modelClass: Weather,
         join: {
-          from: "constructor.id",
-          to: "airplanesModel.constructorId"
+          from: "country.id",
+          to: "weather.countryId"
         }
       }
     }
@@ -25,4 +25,4 @@ class Constructor extends Model {
   // }
 }
 
-export default Constructor
+export default Country
